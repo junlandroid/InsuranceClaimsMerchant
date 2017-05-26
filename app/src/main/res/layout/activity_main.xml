@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hy.junl.merchant.MainActivity">
 
-    <TextView
-        android:layout_width="97dp"
-        android:layout_height="107dp"
-        android:text="Hello World!"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintTop_toTopOf="@+id/button"
-        android:layout_marginTop="100dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintVertical_bias="0.473" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ui.MainActivity">
+    <FrameLayout
+        android:id="@+id/fl_body"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/tab_layout"
+        android:background="?attr/dayNightBackground"
+        app:dayNightBackgroundAttr="dayNightBackground"
+        android:layout_height="match_parent"/>
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/__leak_canary_icon"
-        tools:layout_editor_absoluteX="164dp"
-        tools:layout_editor_absoluteY="186dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="80dp" />
-</android.support.constraint.ConstraintLayout>
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/dayNightBackground"
+        app:dayNightBackgroundAttr="dayNightBackground"
+        tl:tl_indicator_height="0dp"
+        tl:tl_iconHeight="20dp"
+        tl:tl_iconWidth="20dp"
+        tl:tl_indicator_color="@color/red"
+        tl:tl_textSelectColor="@color/main_color"
+        tl:tl_textUnselectColor="@color/light_gray"
+        tl:tl_textsize="11sp"
+        tl:tl_underline_height="0dp" />
+</RelativeLayout>
